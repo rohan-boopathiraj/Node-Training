@@ -1,0 +1,5 @@
+{"color":"turquoise 2","code":{"hex":"#00E5EE"},"id":154}
+{"color":"darkslategray 4","code":{"hex":"#528B8B"},"id":175}
+{"color":"powderblue","code":{"hex":"#B0E0E6"},"id":148}
+{"color":"cadetblue 3","code":{"hex":"#7AC5CD"},"id":151}
+{"color":"cyan 2","code":{"hex":"#00EEEE"},"id":177}
