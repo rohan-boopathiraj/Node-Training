@@ -1,0 +1,37 @@
+[
+    {
+        "color": "darkslategray 3",
+        "code": {
+            "hex": "#79CDCD"
+        },
+        "id": 174
+    },
+    {
+        "color": "azure 2",
+        "code": {
+            "hex": "#E0EEEE"
+        },
+        "id": 160
+    },
+    {
+        "color": "lightblue 3",
+        "code": {
+            "hex": "#9AC0CD"
+        },
+        "id": 146
+    },
+    {
+        "color": "lightcyan 3",
+        "code": {
+            "hex": "#B4CDCD"
+        },
+        "id": 165
+    },
+    {
+        "color": "darkslategray 1",
+        "code": {
+            "hex": "#97FFFF"
+        },
+        "id": 172
+    }
+]
