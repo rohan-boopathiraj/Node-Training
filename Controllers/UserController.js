@@ -22,8 +22,7 @@ fs.access(filePath, fs.constants.F_OK, (err) => {
 let addBuddy = (req, res) => {
     if (isAccessible) {
         const newBuddy = req.body;
-        addBuddyService(newBuddy);
-        res.send(newBuddy);
+        res.send(addBuddyService(newBuddy));
     } else {
         res.send(errorMsg);
     }

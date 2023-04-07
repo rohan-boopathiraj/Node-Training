@@ -31,16 +31,19 @@ function getBuddyByIdService(id) {
 function addBuddyService(newBuddy) {
     let errorMsg = "Server Error";
     let idMsg = "Record with the same Id already exist";
+    let successMsg = "Buddy added";
     try {
         const buddy = JSON.parse(
             readFileSync("./cdw_ace23_buddies.json", "utf-8")
         );
         const updateIndex = buddy.findIndex(
-            (element) => element.employeeId == newBuddy.id
+            (element) => element.employeeId == newBuddy.employeeId
         );
+
         if (updateIndex == -1) {
             buddy.push(newBuddy);
             writeFileSync("./cdw_ace23_buddies.json", JSON.stringify(buddy));
+            return successMsg;
         } else {
             return idMsg;
         }
