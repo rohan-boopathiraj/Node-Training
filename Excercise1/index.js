@@ -9,7 +9,6 @@ for (index = 0; index < 5; index++) {
 }
 fs.writeFile("colorGenerated.json", JSON.stringify(colors) + "\n", (err) => {
     if (err) console.log("Can't write to the File");
-    else console.log(JSON.stringify(colorPallete[ind]));
 });
 
 fs.readFile("colorGenerated.json", "UTF-8", (err, data) => {
