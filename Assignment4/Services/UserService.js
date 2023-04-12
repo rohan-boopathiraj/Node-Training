@@ -8,7 +8,7 @@ function getBuddyService() {
         const buddyList = readFileSync("./cdw_ace23_buddies.json");
         return buddyList;
     } catch (err) {
-        return errorMsg;
+        return err;
     }
 }
 
@@ -32,6 +32,7 @@ function addBuddyService(newBuddy) {
     let errorMsg = "Server Error";
     let idMsg = "Record with the same Id already exist";
     let successMsg = "Buddy added";
+    let mismatchMsg = "Content Mismatch";
     try {
         const buddy = JSON.parse(
             readFileSync("./cdw_ace23_buddies.json", "utf-8")
@@ -40,7 +41,11 @@ function addBuddyService(newBuddy) {
             (element) => element.employeeId == newBuddy.employeeId
         );
 
+        const buddyLength = Object.keys(newBuddy).length;
         if (updateIndex == -1) {
+            if (buddyLength != 5) {
+                return mismatchMsg;
+            }
             buddy.push(newBuddy);
             writeFileSync("./cdw_ace23_buddies.json", JSON.stringify(buddy));
             return successMsg;
@@ -55,8 +60,8 @@ function addBuddyService(newBuddy) {
 // D) update the existing buddy information
 function updateBuddyService(data, id) {
     let errorMsg = "Server Error";
+    let successMsg = "Record updated";
     try {
-        let successMsg = "Record updated";
         const buddy = JSON.parse(
             readFileSync("./cdw_ace23_buddies.json", "utf-8")
         );
@@ -69,10 +74,13 @@ function updateBuddyService(data, id) {
         keys.forEach((element) => {
             buddy[updateIndex][element] = data[element];
         });
+        if (data.id != id) {
+            return "Id Mismatch";
+        }
         writeFileSync("./cdw_ace23_buddies.json", JSON.stringify(buddy));
         return successMsg;
     } catch (err) {
-        return errorMsg;
+        return errorMsg; 
     }
 }
 
