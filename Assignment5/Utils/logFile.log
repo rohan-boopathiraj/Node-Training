@@ -1,0 +1,7 @@
+{"level":"error","message":"500 - ENOENT: no such file or directory, open './cdw_ace23_buddies.jso'"}
+{"level":"error","message":"500 - ENOENT: no such file or directory, open './cdw_ace23_buddies.jso'"}
+{"level":"error","message":"500 - ENOENT: no such file or directory, open './cdw_ace23_buddies.jso'"}
+{"level":"info","message":"Server Running on port 5000"}
+{"level":"info","message":"Reached getBuddy Controller"}
+{"level":"info","message":"Control passed to getBuddy Service "}
+{"level":"info","message":"Reached getBuddy Service"}
