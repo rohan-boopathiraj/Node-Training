@@ -1,0 +1,1 @@
+function validateUserLogin(userDatabase, loginCredentials) {}
