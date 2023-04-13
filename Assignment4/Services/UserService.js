@@ -61,6 +61,9 @@ function addBuddyService(newBuddy) {
 function updateBuddyService(data, id) {
     let errorMsg = "Server Error";
     let successMsg = "Record updated";
+    if (data.id != id) {
+        return "Id Mismatch";
+    }
     try {
         const buddy = JSON.parse(
             readFileSync("./cdw_ace23_buddies.json", "utf-8")
@@ -74,13 +77,11 @@ function updateBuddyService(data, id) {
         keys.forEach((element) => {
             buddy[updateIndex][element] = data[element];
         });
-        if (data.id != id) {
-            return "Id Mismatch";
-        }
+
         writeFileSync("./cdw_ace23_buddies.json", JSON.stringify(buddy));
         return successMsg;
     } catch (err) {
-        return errorMsg; 
+        return errorMsg;
     }
 }
 

@@ -16,7 +16,7 @@ fs.access(filePath, fs.constants.F_OK, (err) => {
         isAccessible = false;
     } else {
         isAccessible = true;
-    }
+    } 
 });
 
 let addBuddy = (req, res) => {
